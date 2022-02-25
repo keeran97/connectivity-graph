@@ -7,7 +7,7 @@ import networkx as nx
 
 from mapknowledge import KnowledgeStore
 
-store = KnowledgeStore('.')
+store = KnowledgeStore(None)
 
 def label(term):
     if term is not None:
