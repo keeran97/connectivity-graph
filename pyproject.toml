@@ -6,6 +6,6 @@ authors = ["David Brooks <d.brooks@auckland.ac.nz>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-ipycytoscape = "^1.2.2"
-notebook = "^6.4.8"
+ipycytoscape = "*"
 mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.9.5/mapknowledge-0.9.5-py3-none-any.whl"}
+notebook = "*"
