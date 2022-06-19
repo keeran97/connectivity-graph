@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "map-tools"
-version = "0.9.5"
+version = "0.10.1"
 description = ""
 authors = ["David Brooks <d.brooks@auckland.ac.nz>"]
 
@@ -8,6 +8,8 @@ authors = ["David Brooks <d.brooks@auckland.ac.nz>"]
 python = ">=3.8,<3.11"
 ipycytoscape = "*"
 mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.10.1/mapknowledge-0.10.1-py3-none-any.whl"}
+#mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.9.9/mapknowledge-0.9.9-py3-none-any.whl"}
+#mapknowledge = {path = "../map-knowledge", develop = true }
 notebook = "*"
 
 [tool.poetry.dev-dependencies]
