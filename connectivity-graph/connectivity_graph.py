@@ -24,13 +24,16 @@ import networkx as nx
 #===============================================================================
 
 from mapknowledge import KnowledgeStore
+from mapknowledge.scicrunch import SCICRUNCH_PRODUCTION, SCICRUNCH_STAGING
 
 #===============================================================================
 
 class ConnectivityKnowledge(KnowledgeStore):
-    def __init__(self, store_directory=None, clean_connectivity=False, scicrunch_key=None):
+    def __init__(self, store_directory=None, clean_connectivity=False,
+                 scicrunch_release=SCICRUNCH_PRODUCTION, scicrunch_key=None):
         super().__init__(store_directory=store_directory,
                          clean_connectivity=clean_connectivity,
+                         scicrunch_release=scicrunch_release,
                          scicrunch_key=scicrunch_key)
 
     def formatted_label(self, term):
