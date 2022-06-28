@@ -79,10 +79,12 @@ STYLING = [
     }
 ]
 
-def display_connectivity(G):
-    g = ipycytoscape.CytoscapeWidget()
-    g.graph.add_graph_from_networkx(G, directed=True)
-    g.set_style(STYLING)
-    display(g)
+def display_connectivity(graph):
+    for nodes in nx.connected_components(graph):
+        G = graph.subgraph(nodes)
+        g = ipycytoscape.CytoscapeWidget()
+        g.graph.add_graph_from_networkx(G, directed=True)
+        g.set_style(STYLING)
+        display(g)
 
 #===============================================================================
