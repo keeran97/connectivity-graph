@@ -28,6 +28,26 @@ from mapknowledge.scicrunch import SCICRUNCH_PRODUCTION, SCICRUNCH_STAGING
 
 #===============================================================================
 
+LABEL_WIDTH = 16
+
+def wrap_text(text, max_width=LABEL_WIDTH):
+    words = text.strip().split()
+    s = 0
+    while True:
+        l = 0
+        e = s
+        while e < len(words) and l < max_width:
+            l += len(words[e])
+            e += 1
+        if l < max_width:
+            yield ' '.join(words[s:e])
+            return
+        else:
+            if e > (s + 1):
+                e -= 1
+            yield ' '.join(words[s:e])
+            s = e
+
 class ConnectivityKnowledge(KnowledgeStore):
     def __init__(self, store_directory=None, clean_connectivity=False,
                  scicrunch_release=SCICRUNCH_PRODUCTION, scicrunch_key=None):
@@ -39,7 +59,7 @@ class ConnectivityKnowledge(KnowledgeStore):
     def formatted_label(self, term):
         if term is not None:
             label = self.label(term)
-            return f'{term}: {label}' if label is not None else term
+            return '\n'.join(wrap_text(f'{term}: {label}' if label is not None else term))
         return ''
 
     def node_id(self, node):
