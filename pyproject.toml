@@ -9,6 +9,8 @@ python = ">=3.8,<3.11"
 ipycytoscape = "*"
 mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.10.2/mapknowledge-0.10.2-py3-none-any.whl"}
 notebook = "*"
+igraph = "^0.9.11"
+pycairo = "^1.21.0"
 
 [tool.poetry.dev-dependencies]
 rst2pdf = "^0.99"
