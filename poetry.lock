@@ -500,7 +500,7 @@ requests = "*"
 
 [package.source]
 type = "url"
-url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.10.3/mapknowledge-0.10.3-py3-none-any.whl"
+url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.10.6/mapknowledge-0.10.6-py3-none-any.whl"
 [[package]]
 name = "markupsafe"
 version = "2.1.1"
