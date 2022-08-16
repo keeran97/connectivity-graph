@@ -45,6 +45,17 @@ MODELS = [
 
 #===============================================================================
 
+def graph_from_knowledge(store, knowledge):
+    G = nx.Graph()
+    for n, pair in enumerate(knowledge.get('connectivity', [])):
+        nodes = (store.node_id(pair[0]),
+                 store.node_id(pair[1]))
+        if (nodes[0] != nodes[1]):
+            G.add_edge(*nodes, directed=True, id=n)
+            n += 1
+    return G
+
+
 def list_paths(scicrunch_release, graph_dir=None):
     store = ConnectivityKnowledge(scicrunch_release=scicrunch_release)
     if graph_dir is not None and not os.path.exists(graph_dir):
@@ -65,12 +76,14 @@ def list_paths(scicrunch_release, graph_dir=None):
         else:
             log(f'{model_name}: {len(paths)} paths')
         for path_id in sorted([path['id'] for path in paths]):
-            graph = store.connectivity(path_id)
+            path_knowledge = store.entity_knowledge(path_id)
+            phenotypes = path_knowledge.get('phenotypes', [])
+            graph = graph_from_knowledge(store, path_knowledge)
             components = list(nx.connected_components(graph))
             if len(components) == 0:
-                log(f'{model_name}: {path_id}: NO PATH')
+                log(f'{model_name}: {path_id}: NO PATH, {phenotypes}')
             else:
-                log(f'{model_name}: {path_id}: {len(components)} components')
+                log(f'{model_name}: {path_id}: {len(components)} components, {phenotypes}')
             for n, nodes in enumerate(components):
                 if graph_dir is not None:
                     G = graph.subgraph(nodes)
