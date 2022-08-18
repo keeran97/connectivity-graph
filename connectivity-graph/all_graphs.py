@@ -46,17 +46,33 @@ MODELS = [
 
 #===============================================================================
 
-def matched_term(node, terms):
+def matched_term(node, region_layers):
     i = 0
     n = len(node[1])
-    term = node[0]
+    layer_or_region, regions = node
+
+    if (layer_or_region, None) in region_layers:
+        # sometimes it is region, regions when you
+        # have internalIn nesting
+        return True
+
+    if regions:  # this is regions and parents so have to start with None
+        region = regions[i]
+        layer = layer_or_region
+    else:
+        region = layer_or_region
+        layer = None
+
     while True:
-        if term in terms:
+        if (region, layer) in region_layers:
             return True
+        #elif (region, None) in region_layers:
+            # on the very off chance
+            #return True
         elif i >= n:
             return False
         else:
-            term = node[1][i]
+            region = regions[i]
             i += 1
 
 def graph_from_knowledge(store, knowledge):

@@ -28,6 +28,8 @@ from mapknowledge.scicrunch import SCICRUNCH_PRODUCTION, SCICRUNCH_STAGING
 
 #===============================================================================
 
+from all_graphs import graph_from_knowledge
+
 LABEL_WIDTH = 16
 
 def wrap_text(text, max_width=LABEL_WIDTH):
@@ -85,7 +87,7 @@ STYLING = [
     {
         'selector': 'node',
         'style': {
-            'label': 'data(id)',
+            'label': 'data(label)',
             'background-color': '#80F0F0',
             'text-valign': 'center',
             'text-wrap': 'wrap',
@@ -93,6 +95,12 @@ STYLING = [
             'font-size': '10px'
         }
     },
+    {'selector': 'node[axon]',
+     'style': {'background-color': 'green',},},
+    {'selector': 'node[dendrite]',
+     'style': {'background-color': 'red',},},
+    {'selector': 'node[both-a-d]',
+     'style': {'background-color': 'gray',},},
     {
         'selector': 'edge',
         'style': {
@@ -102,12 +110,35 @@ STYLING = [
     }
 ]
 
+
 def display_connectivity(graph):
     for nodes in nx.connected_components(graph):
         G = graph.subgraph(nodes)
         g = ipycytoscape.CytoscapeWidget()
         g.graph.add_graph_from_networkx(G, directed=True)
         g.set_style(STYLING)
+        display(g)
+
+
+def all_the_things(store, nid):
+    wat = store.entity_knowledge(nid)
+    graph = graph_from_knowledge(store, wat)
+    nodesm = list(nx.connected_components(graph))
+    for hrm in nodesm:
+        G = graph.subgraph(hrm)
+        G.nodes[list(G.nodes.keys())[1]]
+        g = ipycytoscape.CytoscapeWidget()
+        g.graph.add_graph_from_networkx(G, directed=True)
+        g.set_style(STYLING)
+        [n.data.pop('dendrite') for n in g.graph.nodes if not n.data['dendrite']]
+        [n.data.pop('axon') for n in g.graph.nodes if not n.data['axon']]
+        for n in g.graph.nodes:
+            if ('axon' in n.data and 'dendrite' in n.data and
+                n.data['axon'] and n.data['dendrite']):
+                n.data['both-a-d'] = True
+                n.data.pop('axon')
+                n.data.pop('dendrite')
+
         display(g)
 
 #===============================================================================
