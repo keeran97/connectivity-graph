@@ -46,53 +46,8 @@ MODELS = [
 
 #===============================================================================
 
-def matched_term(node, region_layers):
-    i = 0
-    n = len(node[1])
-    layer_or_region, regions = node
-
-    if (layer_or_region, None) in region_layers:
-        # sometimes it is region, regions when you
-        # have internalIn nesting
-        return True
-
-    if regions:  # this is regions and parents so have to start with None
-        region = regions[i]
-        layer = layer_or_region
-    else:
-        region = layer_or_region
-        layer = None
-
-    while True:
-        if (region, layer) in region_layers:
-            return True
-        #elif (region, None) in region_layers:
-            # on the very off chance
-            #return True
-        elif i >= n:
-            return False
-        else:
-            region = regions[i]
-            i += 1
-
-def graph_from_knowledge(store, knowledge):
-    axons = knowledge.get('axons', [])
-    dendrites = knowledge.get('dendrites', [])
-    def set_node_attributes(G, node):
-        G.nodes[node]['label'] = store.node_id(node)
-        G.nodes[node]['axon'] = matched_term(node, axons)
-        G.nodes[node]['dendrite'] = matched_term(node, dendrites)
-    G = nx.Graph()
-    for n, pair in enumerate(knowledge.get('connectivity', [])):
-        node_0 = (pair[0][0], tuple(pair[0][1]))
-        node_1 = (pair[1][0], tuple(pair[1][1]))
-        G.add_edge(node_0, node_1, directed=True, id=n)
-        set_node_attributes(G, node_0)
-        set_node_attributes(G, node_1)
-    return G
-
 def list_paths(scicrunch_release, graph_dir=None):
-    store = ConnectivityKnowledge(store_directory='.', scicrunch_release=scicrunch_release)
+    store = ConnectivityKnowledge(store_directory='.', clean_connectivity=True, scicrunch_release=scicrunch_release)
     if graph_dir is not None and not os.path.exists(graph_dir):
         os.makedirs(graph_dir)
 
@@ -113,8 +68,7 @@ def list_paths(scicrunch_release, graph_dir=None):
         for path_id in sorted([path['id'] for path in paths]):
             path_knowledge = store.entity_knowledge(path_id)
             phenotypes = path_knowledge.get('phenotypes', [])
-            graph = graph_from_knowledge(store, path_knowledge)
-
+            graph = store.connectivity_from_knowledge(path_knowledge)
             components = list(nx.connected_components(graph))
             if len(components) == 0:
                 log(f'{model_name}: {path_id}: NO PATH, {phenotypes}')

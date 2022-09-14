@@ -28,8 +28,6 @@ from mapknowledge.scicrunch import SCICRUNCH_PRODUCTION, SCICRUNCH_STAGING
 
 #===============================================================================
 
-from all_graphs import graph_from_knowledge
-
 LABEL_WIDTH = 16
 
 def wrap_text(text, max_width=LABEL_WIDTH):
@@ -50,6 +48,8 @@ def wrap_text(text, max_width=LABEL_WIDTH):
             yield ' '.join(words[s:e])
             s = e
 
+#===============================================================================
+
 class ConnectivityKnowledge(KnowledgeStore):
     def __init__(self, store_directory=None, clean_connectivity=False,
                  scicrunch_release=SCICRUNCH_PRODUCTION, scicrunch_key=None):
@@ -64,6 +64,15 @@ class ConnectivityKnowledge(KnowledgeStore):
             return '\n'.join(wrap_text(f'{term}: {label}' if label is not None else term))
         return ''
 
+    @staticmethod
+    def matched_term(node, layer_region_terms):
+        print(node, layer_region_terms)
+        layer, regions = node
+        for region in regions:
+            if (layer, region) in layer_region_terms:
+                return True
+        return False
+
     def node_id(self, node):
         names = [self.formatted_label(node[0])]
         for term in node[1]:
@@ -72,13 +81,22 @@ class ConnectivityKnowledge(KnowledgeStore):
 
     def connectivity(self, neuron_population_id):
         knowledge = self.entity_knowledge(neuron_population_id)
+        return self.connectivity_from_knowledge(knowledge)
+
+    def connectivity_from_knowledge(self, knowledge):
+        axon_nodes = knowledge.get('axons', [])
+        dendrite_nodes = knowledge.get('dendrites', [])
+        def set_node_attributes(G, node):
+            G.nodes[node]['label'] = self.node_id(node)
+            G.nodes[node]['axon'] = node in axon_nodes
+            G.nodes[node]['dendrite'] = node in dendrite_nodes
         G = nx.Graph()
         for n, pair in enumerate(knowledge.get('connectivity', [])):
-            nodes = (self.node_id(pair[0]),
-                     self.node_id(pair[1]))
-            if (nodes[0] != nodes[1]):
-                G.add_edge(*nodes, directed=True, id=n)
-                n += 1
+            node_0 = (pair[0][0], tuple(pair[0][1]))
+            node_1 = (pair[1][0], tuple(pair[1][1]))
+            G.add_edge(node_0, node_1, directed=True, id=n)
+            set_node_attributes(G, node_0)
+            set_node_attributes(G, node_1)
         return G
 
 #===============================================================================
@@ -110,22 +128,18 @@ STYLING = [
     }
 ]
 
+#===============================================================================
 
-def display_connectivity(graph):
-    for nodes in nx.connected_components(graph):
+def display_connectivity_for_entity(store, entity):
+    display_connectivity_graph(
+        graph := store.connectivity_from_knowledge(
+            knowledge := store.entity_knowledge(entity)))
+    return (knowledge, graph)
+
+def display_connectivity_graph(graph):
+    connected_nodes = list(nx.connected_components(graph))
+    for nodes in connected_nodes:
         G = graph.subgraph(nodes)
-        g = ipycytoscape.CytoscapeWidget()
-        g.graph.add_graph_from_networkx(G, directed=True)
-        g.set_style(STYLING)
-        display(g)
-
-
-def all_the_things(store, nid):
-    wat = store.entity_knowledge(nid)
-    graph = graph_from_knowledge(store, wat)
-    nodesm = list(nx.connected_components(graph))
-    for hrm in nodesm:
-        G = graph.subgraph(hrm)
         G.nodes[list(G.nodes.keys())[1]]
         g = ipycytoscape.CytoscapeWidget()
         g.graph.add_graph_from_networkx(G, directed=True)
@@ -138,7 +152,6 @@ def all_the_things(store, nid):
                 n.data['both-a-d'] = True
                 n.data.pop('axon')
                 n.data.pop('dendrite')
-
         display(g)
 
 #===============================================================================
