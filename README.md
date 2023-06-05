@@ -1,15 +1,13 @@
 # Windows installation of Connectivity Graphs
 
-The connectivity graphs notebook provides access to information on individual neuron populations as per SCKAN and ApiNATOMY models. The connectivity_graph.ipynb allows visualisation of the individual neuron connections and the related anatomical features.
+The connectivity graphs notebook provides access to information on individual neuron populations as per SCKAN and ApiNATOMY models. The *connectivity_graph.ipynb* allows visualisation of the individual neuron connections and the related anatomical features.
 
-The jupyter notebook can be installed using various command interpreters. In this case, the notebook was installed using the Windows Command Prompt.
+The jupyter notebook can be installed using various command interpreters. In this case, the notebook was installed using the [Windows Command Prompt](https://www.lifewire.com/how-to-open-command-prompt-2618089).
 
 ## Requirements
 
 ### Python
-If not already present, download and install Python as per the official instructions. Be sure to select the ‘Add Python to PATH’ option.
-                     
-https://www.python.org/downloads/
+If not already present, download and install Python as per the [official instructions](https://www.python.org/downloads/). Be sure to select the ‘*Add Python to PATH*’ option.
                       
 The installation can be tested with
 ```
@@ -17,13 +15,9 @@ The installation can be tested with
 ```
 
 ### GitHub
-Download and install Git as per the official instructions. 
+Download and install Git as per the [official instructions](https://github.com/git-guides/install-git).
 
-https://github.com/git-guides/install-git
-
-For more information on using Git refer to this Git Cheat Sheet.
-
-https://education.github.com/git-cheat-sheet-education.pdf
+For more information on using Git refer to this [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf).
 
 The installation can be tested with 
 ```
@@ -49,18 +43,14 @@ cd connectivity-graph
 poetry install
 ```
 
-3.	A SciCrunch key will need to be set in order to access SCKAN. For more information on obtaining a SciCrunch API Key refer to the documentation below.
-
-https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch
+3.	A SciCrunch key will need to be set in order to access SCKAN. For more information on obtaining a SciCrunch API Key follow these [instructions](https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch).
 
 Note that the process of setting a variable will differ depending on what interpreter is being used. In a Windows Command Prompt, the SciCrunch Key can be set as below.
 ```
 set SCICRUNCH_API_KEY= *A valid SciCrunch API KEY*
 ```
 
-Alternatively, the API Key can be permanently added to the environment, shown in the link below.
-
-https://www.howtogeek.com/787217/how-to-edit-environment-variables-on-windows-10-or-11/
+Alternatively, the API Key can be permanently added to the Windows environment by following these [instructions](https://www.howtogeek.com/787217/how-to-edit-environment-variables-on-windows-10-or-11/).
 
 4.	Activate the Jupyter notebook†.
 ```
@@ -80,7 +70,7 @@ python -m poetry run jupyter notebook
 
 #### NOTE: If the browser doesn’t automatically open, the Notebook can be accessed via the URL provided.
 
-2.	Navigate to and open the connectivity_graph.ipynb notebook.
+2.	Navigate to and open the *connectivity_graph.ipynb* notebook.
 
 ![image](https://github.com/keeran97/connectivity-graph/assets/85910337/8574979c-987f-410c-8549-cb38c958444f)
  
