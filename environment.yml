@@ -1,0 +1,11 @@
+name: connectivity-graph_environment
+
+channels:
+  - defaults
+ 
+dependencies:
+  - python==3.8
+  - mamba
+  - pip
+  - pip:
+    - poetry==1.2.2
