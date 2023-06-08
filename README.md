@@ -1,6 +1,6 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/keeran97/connectivity-graph/HEAD)
 
-*The binder badge above launches a Binder of the Jupter Notebook in this repository. This is current in development and does not work.*
+*The binder badge above launches a Docker image of the Jupter Notebook in this repository. This is currently in development and does not work.*
 
 # Windows installation of Connectivity Graphs
 
