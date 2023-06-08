@@ -81,9 +81,17 @@ python -m poetry run jupyter notebook
 ## ApiNATOMY Models
 
 The different populations can be visualised by changing the entity attribute of the Jupyter Notebook, highlighted in the image above. 
-The image below displays the different ilxtr and path IDs for the various ApiNATOMY models and their respective paths.
+The table below displays the different ilxtr and path IDs for the various ApiNATOMY models and their respective paths.
 
-![image](https://github.com/keeran97/connectivity-graph/assets/85910337/9c6bcb41-8a6f-4430-b19f-9a28973f3d1c)
+| **Model**                                 | **ilxtr** ('X' represents Path ID) | **Path IDs**                                                          |
+| ----------------------------------------- | ---------------------------------- | --------------------------------------------------------------------- |
+| ApiNATOMY model of bronchomotor control   | neuron-type-bromo-X                | 1, 2, 3, 4, 5, 6                                                      |
+| ApiNATOMY model of the spleen             | neuron-type-splen-X                | 1, 2, 3, 4, 5                                                         |
+| ApiNATOMY model of the stomach            | neuron-type-sstom-X                | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13                             |
+| Ardell-Armour model of the heart          | neuron-type-aacar-X                | 1, 2i, 2m, 4, 5, 6, 7a, 7v, 8a, 8v, 9a, 9v, 10a, 10v, 11, 12, 13      |
+| Bolser-Lewis model of defensive breathing | neuron-type-bolew-unbranched-X     | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 |
+| Keast model of the bladder                | neuron-type-keast-X                | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 |
+| SAWG model of the distal colon            | neuron-type-sdcol-X                | b, c, d, f, g, h, i, j, j’, k, l, l’, m, n, o, p, q                   |
 
 For more information on the different ApiNATOMY models and their neuron populations, refer to the documentation below.
 https://scicrunch.org/sawg/about/SCKAN
