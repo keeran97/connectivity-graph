@@ -5,7 +5,7 @@ channels:
 	- conda-forge
 
 dependencies:
-	- python>=3.8, <4.0
+	- python = ">=3.8, <4.0"
 	- poetry
 	- pip
 	- mamba
@@ -13,4 +13,3 @@ dependencies:
 	- mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.13.2/mapknowledge-0.13.2-py3-none-any.whl"}
 	- notebook = "^6.4.12"
 	- igraph = "^0.9.11"
-	
