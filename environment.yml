@@ -2,6 +2,7 @@ name: connectivity-graph_environment
 
 channels:
   - defaults
+  - conda-forge
  
 dependencies:
   - python==3.8
