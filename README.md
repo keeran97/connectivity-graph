@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/keeran97/connectivity-graph/HEAD)
+
 # Windows installation of Connectivity Graphs
 
 The connectivity graphs notebook provides access to information on individual neuron populations as per SCKAN and ApiNATOMY models. The *connectivity_graph.ipynb* allows visualisation of the individual neuron connections and the related anatomical features.
