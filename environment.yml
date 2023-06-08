@@ -1,8 +1,0 @@
-name: connectivity-graph_environment
-
-dependencies:
-  - python==3.8
-  - mamba
-  - pip
-  - pip:
-    - "poetry==1.2.2"
