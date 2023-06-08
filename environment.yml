@@ -1,7 +1,6 @@
 name: connectivity-graph_environment
 
 channels:
-  - pytorch
   - conda-forge
 
 dependencies:
@@ -9,8 +8,3 @@ dependencies:
   - python < 4.0
   - poetry
   - pip
-  - mamba
-  - ipycytoscape = 1.3.3
-  - mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.13.2/mapknowledge-0.13.2-py3-none-any.whl"}
-  - notebook = 6.4.12
-  - igraph = 0.9.11
