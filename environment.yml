@@ -5,8 +5,8 @@ channels:
   - conda-forge
  
 dependencies:
-  - python==3.8
+  - python=3.8
   - mamba
   - pip
   - pip:
-    - poetry==1.2.2
+    - poetry=1.2.2
