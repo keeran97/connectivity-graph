@@ -9,4 +9,4 @@ dependencies:
   - mamba
   - pip
   - pip:
-    - poetry=1.2.2
+    - poetry==1.2.2
