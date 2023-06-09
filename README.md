@@ -99,5 +99,4 @@ The table below displays the different ilxtr and path IDs for the various ApiNAT
 | Keast model of the bladder                | neuron-type-keast-X                | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 |
 | SAWG model of the distal colon            | neuron-type-sdcol-X                | b, c, d, f, g, h, i, j, j’, k, l, l’, m, n, o, p, q                   |
 
-For more information on the different ApiNATOMY models and their neuron populations, refer to the documentation below.
-https://scicrunch.org/sawg/about/SCKAN
+For more information on the different ApiNATOMY models and SCKAN, refer to the [SciCrunch](https://scicrunch.org/sawg/about/SCKAN) site.
