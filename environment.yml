@@ -11,3 +11,4 @@ dependencies:
   - pip:
     - poetry==1.2.2
   - ipycytoscape
+  - networkx
