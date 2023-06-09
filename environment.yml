@@ -7,9 +7,9 @@ channels:
 dependencies:
   - python=3.8
   - mamba
-  - pip
-  - pip:
-    - poetry==1.2.2
   - ipycytoscape
   - networkx
   - mapknowledge
+  - pip
+  - pip:
+    - poetry==1.2.2
