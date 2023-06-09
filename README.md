@@ -29,10 +29,12 @@ git version
 ```
 
 ### Poetry
-Poetry can be installed via the command below. In the desired directory:
+Poetry can be easily installed via the command below. In the desired directory:
 ```
 python -m pip install poetry
 ```
+
+The Poetry tool can also be installed as per the [official instructions](https://python-poetry.org/docs/#installation).
 
 ## Installation
 
