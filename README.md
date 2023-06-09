@@ -80,9 +80,9 @@ python -m poetry run jupyter notebook
 
 ![image](https://github.com/keeran97/connectivity-graph/assets/85910337/8574979c-987f-410c-8549-cb38c958444f)
  
-3.	Neuron populations can be visualised by running the notebook. The first part of the notebook imports and loads the appropriate packages. The latter part (shown below), visualises the neuron population. The window that visualises the neuron population (highlighted by the red box below) can be navigated by left-clicking and dragging, and scrolling to zoom in/out. Note that the window can be resized from the lower right corner.
+3.	Neuron populations can be visualised by running the notebook. The first part of the notebook imports and loads the appropriate packages. The latter part (shown below), visualises the neuron population. The window that visualises the neuron population can be navigated by left-clicking and dragging, and scrolling to zoom in/out. Note that the window can be resized from the lower right corner.
 
-![image](https://github.com/keeran97/connectivity-graph/assets/85910337/a3ea594f-bf5f-468a-92c2-56321d6837d7)
+![Media2_AdobeExpress](https://github.com/keeran97/connectivity-graph/assets/85910337/ace31ffb-7d95-4bf6-9d1c-a73cab7b4c9e)
 
 ## ApiNATOMY Models
 
@@ -101,4 +101,3 @@ The table below displays the different ilxtr and path IDs for the various ApiNAT
 
 For more information on the different ApiNATOMY models and their neuron populations, refer to the documentation below.
 https://scicrunch.org/sawg/about/SCKAN
-
