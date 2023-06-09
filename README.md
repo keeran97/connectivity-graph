@@ -51,7 +51,7 @@ poetry install
 
 3.	A SciCrunch key will need to be set in order to access SCKAN. For more information on obtaining a SciCrunch API Key follow these [instructions](https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch).
 
-*Note that the process of setting a variable will differ depending on what interpreter is being used. In a Windows Command Prompt, the SciCrunch Key can be set as below.*
+**NOTE**: *The process of setting a variable will differ depending on what interpreter is being used. In a Windows Command Prompt, the SciCrunch Key can be set as below.*
 ```
 set SCICRUNCH_API_KEY= *A valid SciCrunch API KEY*
 ```
