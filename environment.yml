@@ -9,7 +9,6 @@ dependencies:
   - mamba
   - ipycytoscape
   - networkx
-  - mapknowledge
   - pip
   - pip:
     - poetry==1.2.2
