@@ -51,7 +51,7 @@ poetry install
 
 3.	A SciCrunch key will need to be set in order to access SCKAN. For more information on obtaining a SciCrunch API Key follow these [instructions](https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch).
 
-Note that the process of setting a variable will differ depending on what interpreter is being used. In a Windows Command Prompt, the SciCrunch Key can be set as below.
+*Note that the process of setting a variable will differ depending on what interpreter is being used. In a Windows Command Prompt, the SciCrunch Key can be set as below.*
 ```
 set SCICRUNCH_API_KEY= *A valid SciCrunch API KEY*
 ```
@@ -65,7 +65,7 @@ poetry run jupyter notebook
 
 A web browser should open to the Jupyter Notebook.
 
-#### †NOTE: If steps 2 & 4 fail, Python may need to be invoked.
+**†NOTE**: *If steps 2 & 4 fail, Python may need to be invoked.*
 ```
 python -m poetry install
 python -m poetry run jupyter notebook
@@ -74,7 +74,7 @@ python -m poetry run jupyter notebook
 ## Usage
 1.	Once successfully installed, start the Jupyter Notebook.
 
-#### NOTE: If the browser doesn’t automatically open, the Notebook can be accessed via the URL provided.
+**NOTE**: *If the browser doesn’t automatically open, the Notebook can be accessed via the URL provided.*
 
 2.	Navigate to and open the *connectivity_graph.ipynb* notebook.
 
