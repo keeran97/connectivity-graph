@@ -12,6 +12,3 @@ dependencies:
   - pip
   - pip:
     - poetry==1.2.2
-    - mapknowledge
-    - mapknowledge:
-      - https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.13.2/mapknowledge-0.13.2-py3-none-any.whl
