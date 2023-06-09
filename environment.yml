@@ -12,4 +12,4 @@ dependencies:
     - poetry==1.2.2
   - ipycytoscape
   - networkx
-  - mapknowledge = {url = "https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.13.2/mapknowledge-0.13.2-py3-none-any.whl"}
+  - mapknowledge
