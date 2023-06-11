@@ -1,11 +1,10 @@
-name: connectivity-graph_environment
+name: connectivity-graph
 
 channels:
-  - defaults
   - conda-forge
  
 dependencies:
-  - python>=3.8,<4.0
+  - python>=3.10,<4.0
   - mamba
   - ipycytoscape
   - networkx
