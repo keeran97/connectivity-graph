@@ -1,10 +1,21 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/keeran97/connectivity-graph/HEAD)
 
-*The binder badge above launches a Docker image of the Jupter Notebook in this repository. This is currently in development and does not work.*
+# Connectivity Graph Notebook
+
+The connectivity graphs notebook provides access to information on individual neuron populations as per SCKAN. The *connectivity_graph.ipynb* allows visualisation of the individual neuron connections and the related anatomical features, as per ApiNATOMY models. For more information on the different ApiNATOMY models and SCKAN, refer to the [SciCrunch](https://scicrunch.org/sawg/about/SCKAN) site.
+
+The notebook can be accessed in two different ways. A live version of the notebook can be used via the Binder badge above. For more information refer to the *Jupyter Binder usage* section below. The notebook can also be installed and used locally on various machines. This allows changes to be made and saved locally (the files will be kept in their original state in this GitHub repository). Refer to the *Windows installation of Connectivity Graphs* guide for more information.
+
+# Jupyter Binder usage
+
+A live version of the Jupyter notebook can be launched via the Binder badge above. This allows usage of the notebook without the need to install any of the requirements. In order to use the notebook, the extra step of adding a SciCrunch key must be done in order to access SCKAN. For more information on obtaining a SciCrunch API Key follow these [instructions](https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch).
+
+Clicking on the Binder badge will open the Jupyter notebook in a new tab. As shown below, the notebook can be opened and run in the web browser.
+
+**NOTE**: To use the live version of the notebook the *live_connectivity_graph.ipynb* in the *Binder* folder must be opened, as highlighted with the red boxes below.
+
+![image](https://github.com/keeran97/connectivity-graph/assets/85910337/aa6f3b0d-afa5-4064-8ab4-187d105b65aa)
 
 # Windows installation of Connectivity Graphs
-
-The connectivity graphs notebook provides access to information on individual neuron populations as per SCKAN and ApiNATOMY models. The *connectivity_graph.ipynb* allows visualisation of the individual neuron connections and the related anatomical features.
 
 The jupyter notebook can be installed using various command interpreters. In this case, the notebook was installed using the [Windows Command Prompt](https://www.lifewire.com/how-to-open-command-prompt-2618089).
 
@@ -98,5 +109,3 @@ The table below displays the different ilxtr and path IDs for the various ApiNAT
 | Bolser-Lewis model of defensive breathing | neuron-type-bolew-unbranched-X     | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 |
 | Keast model of the bladder                | neuron-type-keast-X                | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 |
 | SAWG model of the distal colon            | neuron-type-sdcol-X                | b, c, d, f, g, h, i, j, j’, k, l, l’, m, n, o, p, q                   |
-
-For more information on the different ApiNATOMY models and SCKAN, refer to the [SciCrunch](https://scicrunch.org/sawg/about/SCKAN) site.
