@@ -1,3 +1,4 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/keeran97/connectivity-graph/51ff801)
 
 # Connectivity Graph Notebook
 
