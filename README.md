@@ -12,8 +12,6 @@ A live version of the Jupyter notebook can be launched via the Binder badge abov
 
 Clicking on the Binder badge will open the Jupyter notebook in a new tab. As shown below, the notebook can be opened and run in the web browser.
 
-**NOTE**: To use the live version of the notebook the *live_connectivity_graph.ipynb* in the *Binder* folder must be opened, as highlighted with the red boxes below.
-
 ![image](https://github.com/keeran97/connectivity-graph/assets/85910337/aa6f3b0d-afa5-4064-8ab4-187d105b65aa)
 
 # Windows installation of Connectivity Graphs
