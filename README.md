@@ -8,11 +8,11 @@ The notebook can be accessed in two different ways. A live version of the notebo
 
 # Jupyter Binder usage
 
-A live version of the Jupyter notebook can be launched via the Binder badge above. This allows usage of the notebook without the need to install any of the requirements. In order to use the notebook, the extra step of adding a SciCrunch key must be done in order to access SCKAN. For more information on obtaining a SciCrunch API Key follow these [instructions](https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch).
+A live version of the Jupyter notebook can be launched via the Binder badge above. This allows usage of the notebook without the need to install any of the requirements. 
 
-Clicking on the Binder badge will open the Jupyter notebook in a new tab. As shown below, the notebook can be opened and run in the web browser.
+Clicking on the Binder badge will open the Jupyter notebook in a new tab. As shown below, the notebook can be opened and run in the web browser. A SciCrunch Key must be input in order to access SCKAN, as highlighted in the red box below. For more information on obtaining a SciCrunch API Key follow these [instructions](https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch).
 
-![image](https://github.com/keeran97/connectivity-graph/assets/85910337/aa6f3b0d-afa5-4064-8ab4-187d105b65aa)
+![image](https://github.com/keeran97/connectivity-graph/assets/85910337/8406c040-2205-48c6-a4c4-bec8da0d298f)
 
 # Windows installation of Connectivity Graphs
 
@@ -59,14 +59,22 @@ cd connectivity-graph
 poetry install
 ```
 
-3.	A SciCrunch key will need to be set in order to access SCKAN. For more information on obtaining a SciCrunch API Key follow these [instructions](https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch).
+3.	A SciCrunch key will need to be set in order to access SCKAN. This can be done prior to launching the jupyter notebook, or can be set directly in the notebook itself. 
+
+For more information on obtaining a SciCrunch API Key follow these [instructions](https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch).
+
+The SciCrunch key can be set as an environment variable before running the notebook. This removes the need to set it within the notebook. Alternatively, the API Key can be permanently added to the Windows environment by following these [instructions](https://www.howtogeek.com/787217/how-to-edit-environment-variables-on-windows-10-or-11/).
 
 **NOTE**: *The process of setting a variable will differ depending on what interpreter is being used. In a Windows Command Prompt, the SciCrunch Key can be set as below.*
 ```
 set SCICRUNCH_API_KEY= *A valid SciCrunch API KEY*
 ```
 
-Alternatively, the API Key can be permanently added to the Windows environment by following these [instructions](https://www.howtogeek.com/787217/how-to-edit-environment-variables-on-windows-10-or-11/).
+The key can also be set as an environment variable within the notebook, after activation as shown below. When doing this, be sure to remove the # from the line of code. This turns the line from a comment to an activate line of code, making sure it is run.
+
+**NOTE**: *This step is done after activating the Jupyter notebook - Step 4*. 
+
+![image](https://github.com/keeran97/connectivity-graph/assets/85910337/67dd1d25-01d7-4bd2-9acf-76a119dc82dc)
 
 4.	Activate the Jupyter notebook†.
 ```
