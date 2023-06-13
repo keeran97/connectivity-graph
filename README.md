@@ -72,7 +72,7 @@ The SciCrunch key can be set as an environment variable before running the noteb
 
 **NOTE**: *The process of setting a variable will differ depending on what interpreter is being used. In a Windows Command Prompt, the SciCrunch Key can be set as below.*
 ```
-set SCICRUNCH_API_KEY= *A valid SciCrunch API KEY*
+set SCICRUNCH_API_KEY= 'A valid SciCrunch API KEY'
 ```
 
 The key can also be set as an environment variable within the notebook, after activation as shown below. When doing this, be sure to remove the # from the line of code. This turns the line from a comment to an activate line of code, making sure it is run.
