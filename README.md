@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/keeran97/connectivity-graph/4890a4e)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/keeran97/connectivity-graph/5cfad8d215f9ab3ccce8450e8326e3cae0abf194)
 
 # Connectivity Graph Notebook
 
