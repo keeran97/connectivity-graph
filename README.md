@@ -59,6 +59,11 @@ cd connectivity-graph
 poetry install
 ```
 
+Run an update to the Poetry environment to ensure all requirements in the Poetry environment are met.
+```
+poetry update
+```
+
 3.	A SciCrunch key will need to be set in order to access SCKAN. This can be done prior to launching the jupyter notebook, or can be set directly in the notebook itself. 
 
 For more information on obtaining a SciCrunch API Key follow these [instructions](https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch).
