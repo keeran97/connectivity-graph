@@ -105,7 +105,7 @@ python -m poetry run jupyter notebook
  
 3.	Neuron populations can be visualised by running the notebook. The first part of the notebook imports and loads the appropriate packages. The latter part (shown below), visualises the neuron population. The window that visualises the neuron population can be navigated by left-clicking and dragging, and scrolling to zoom in/out. Note that the window can be resized from the lower right corner.
 
-![Media2_AdobeExpress](https://github.com/keeran97/connectivity-graph/assets/85910337/ace31ffb-7d95-4bf6-9d1c-a73cab7b4c9e)
+![GIFMaker_me (3)](https://github.com/keeran97/connectivity-graph/assets/85910337/204f68f2-2eb3-4968-8864-ab7c1d035277)
 
 ## ApiNATOMY Models
 
