@@ -4,11 +4,10 @@ channels:
   - conda-forge
  
 dependencies:
-  - python>=3.10
-  - python<4.0
+  - Python>=3.10,<4.0
   - mamba
   - ipycytoscape
   - networkx
   - pip
   - pip:
-    - https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.13.2/mapknowledge-0.13.2-py3-none-any.whl
+    - https://github.com/AnatomicMaps/map-knowledge/releases/download/v0.14.0/mapknowledge-0.14.0-py3-none-any.whl
