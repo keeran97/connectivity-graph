@@ -13,7 +13,8 @@ A live version of the Jupyter notebook can be launched via the Binder badge abov
 Clicking on the Binder badge will open the Jupyter notebook in a new tab. As shown below, the notebook can be opened and run in the web browser. Note that it may take some time for the notebook to load, as the environment must first be built. 
 A SciCrunch Key must be input in order to access SCKAN, as highlighted in the red box below. For more information on obtaining a SciCrunch API Key follow these [instructions](https://docs.sparc.science/docs/accessing-scicrunch-vocabulary-services#getting-an-api-key-to-access-scicrunch).
 
-![image](https://github.com/keeran97/connectivity-graph/assets/85910337/8406c040-2205-48c6-a4c4-bec8da0d298f)
+![image](https://github.com/keeran97/connectivity-graph/assets/85910337/3a5b525a-aaf9-4d10-89ba-d0e40ad0f352)
+
 
 # Windows installation of Connectivity Graphs
 
